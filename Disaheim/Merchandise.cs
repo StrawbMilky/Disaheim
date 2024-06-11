@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace Disaheim
 {
-    public class Merchandise
+    public abstract class Merchandise //abstract klasse kan ikke instantieres og der behøves derved IKKE en constructor
     {
         public string ItemId { get; set; }
 
-        public Merchandise(string itemId)
-        {
-            this.ItemId = itemId;
-        }
         public override string ToString()
         {
-            return this.ItemId;
+            return $"ItemId: {ItemId}";
         }
-
-
     }
 }

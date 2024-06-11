@@ -11,19 +11,16 @@ namespace Disaheim
         public string Title { get; set; }
         public double Price { get; set; }
 
-        public Book (string itemId) //constructor overloading, se i amulet klassen for bedre forklaring
+        public Book(string itemId) //base keyword bliver brugt når man gerne vil tilgå members fra base klassen, som er merchandise (mere specifikt fra constructeren i base klassen) 
         {
             this.ItemId = itemId;
         }
-        public Book(string itemId, string title)
+        public Book(string itemId, string title) : this(itemId) //this keyword 
         {
-            this.ItemId = itemId;
             this.Title = title;
         }
-        public Book(string itemId, string title, double price)
+        public Book(string itemId, string title, double price) : this(itemId, title) //constructor overloading, se i amulet klassen for bedre forklaring
         {
-            this.ItemId = itemId;
-            this.Title = title;
             this.Price = price;
         }
         public override string ToString()
